@@ -1,7 +1,7 @@
-# SAMBA: Toward a Long-Context EEG Foundation Model via Spatial Embedding and Differential Mamba
-**Update: July 2025**
+# SAMBA: Toward an EEG Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding
+**Update: Jan. 2026**
 
-**SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D spatial-adaptive input embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
+**SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
 <p align="center">
   <img src="./Figures/SAMBA.png" alt="SAMBA Overview" width="900"/>
@@ -17,7 +17,7 @@ We introduce **SAMBA**, a self-supervised learning framework featuring a U-shape
 
 1. **Temporal Semantic Random Masking** — to reconstruct semantically masked segments in long sequences;
 2. **Multi-Head Differential Mamba** — to reduce redundancy and enhance salient temporal features;
-3. **Spatial-Adaptive Input Embedding (SAIE)** — to learn robust 3D spatial representations across heterogeneous EEG devices.
+3. **Coordinate-Driven Spatial Embedding (CDSE)** — to learn robust 3D spatial representations across heterogeneous EEG devices.
 
 Evaluations across **13 EEG datasets** covering a range of tasks, montages, and sequence lengths demonstrate that SAMBA consistently outperforms state-of-the-art baselines, while maintaining low memory usage and fast inference. In addition, the learned spatial weights exhibit strong alignment with task-relevant neurophysiological regions, suggesting that SAMBA is both **learnable** and **interpretable**.
 
@@ -27,10 +27,10 @@ Evaluations across **13 EEG datasets** covering a range of tasks, montages, and 
 
 ## Learnable Spatial Embedding Visualization
 
-The figure below illustrates the **Spatial-Adaptive Input Embedding (SAIE)** module and its alignment with neurophysiological topology:
+The figure below illustrates the **Coordinate-Driven Spatial Embedding (CDSE)** module and its alignment with neurophysiological topology:
 
 <p align="center">
-  <img src="./Figures/SAIE.png" alt="SAIE Overview" width="800"/>
+  <img src="./Figures/CDSE.png" alt="CDSE Overview" width="800"/>
 </p>
 
 
