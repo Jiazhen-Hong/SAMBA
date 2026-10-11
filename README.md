@@ -4,10 +4,6 @@
 
 **Last updated: October 2026**
 
-## News
-
-- **October 2026:** SAMBA was accepted to the NeurReps 2026 Proceedings Track.
-
 **SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
 <p align="center">
