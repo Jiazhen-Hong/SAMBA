@@ -1,5 +1,12 @@
 # SAMBA: Toward an EEG Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding
-**Update: Jan. 2026**
+
+**Accepted to the NeurReps 2026 Proceedings Track at NeurIPS 2026. The paper will appear in the Proceedings of Machine Learning Research (PMLR).**
+
+**Last updated: October 2026**
+
+## News
+
+- **October 2026:** SAMBA was accepted to the NeurReps 2026 Proceedings Track.
 
 **SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
@@ -19,7 +26,7 @@ We introduce **SAMBA**, a self-supervised learning framework featuring a U-shape
 2. **Multi-Head Differential Mamba** — to reduce redundancy and enhance salient temporal features;
 3. **Coordinate-Driven Spatial Embedding (CDSE)** — to learn robust 3D spatial representations across heterogeneous EEG devices.
 
-Evaluations across **13 EEG datasets** covering a range of tasks, montages, and sequence lengths demonstrate that SAMBA consistently outperforms state-of-the-art baselines, while maintaining low memory usage and fast inference. In addition, the learned spatial weights exhibit strong alignment with task-relevant neurophysiological regions, suggesting that SAMBA is both **learnable** and **interpretable**.
+Evaluations across **13 EEG datasets** covering a range of tasks, montages, and sequence lengths demonstrate competitive or improved performance compared with recent state-of-the-art methods, while maintaining low memory usage and efficient inference. In addition, the learned spatial weights exhibit strong alignment with task-relevant neurophysiological regions, highlighting the interpretability of SAMBA.
 
 <!-- > 📌 The code is available at: https://github.com/anon1280/SAMBA -->
 
@@ -79,24 +86,26 @@ The figure below illustrates the **Coordinate-Driven Spatial Embedding (CDSE)** 
 </sub>
 <!-- </div> -->
 
-## Model and Checkpoints
-
-- The full architecture is implemented under `Models/`.
-- Two pretrained checkpoints are provided under `Checkpoints/`:
-  - `SAMBA-E`: trained using PyTorch Lightning
-  - `SAMBA-T`: trained using native PyTorch
-- The accompanying paper is currently in preparation. More features and documentation will be released soon.
-
----
-
 ## Repository Structure
 ```plaintext
 SAMBA/
 ├── Env-requirement/     # Environment configs with dated backups
-├── Checkpoints/         # Pretrained SAMBA models (SAMBA-E, SAMBA-T)
 ├── Models/              # Model architecture implementations
-├── Experiments/         # PyTorch Lightning training modules
 ├── utility/             # Supporting functions: data loading, masking, loss, evaluation
 ├── Figures/             # Diagrams and visualizations
 ├── Montage/             # EEG montage metadata for multiple devices
+├── Main(SAMBA).py       # Main experiment entry point
 └── README.md            # Project overview
+```
+
+## Citation
+
+If you find this work useful, please cite the NeurReps 2026 proceedings paper:
+
+```bibtex
+@InProceedings{hong26,
+  title    = {{SAMBA}: {T}oward an {EEG} {F}oundation {M}odel via {D}ifferential {M}amba and {C}oordinate-{D}riven {S}patial {E}mbedding},
+  author   = {Hong, Jiazhen and Mackellar, Geoffrey and Ghane, Soheila},
+  software = {https://github.com/Jiazhen-Hong/SAMBA}
+}
+```
