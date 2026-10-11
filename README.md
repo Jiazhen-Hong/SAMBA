@@ -99,9 +99,11 @@ SAMBA/
 If you find this work useful, please cite the NeurReps 2026 proceedings paper:
 
 ```bibtex
-@InProceedings{hong26,
-  title    = {{SAMBA}: {T}oward an {EEG} {F}oundation {M}odel via {D}ifferential {M}amba and {C}oordinate-{D}riven {S}patial {E}mbedding},
-  author   = {Hong, Jiazhen and Mackellar, Geoffrey and Ghane, Soheila},
-  software = {https://github.com/Jiazhen-Hong/SAMBA}
+@inproceedings{hong2026samba,
+  title     = {{SAMBA}: Toward an {EEG} Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding},
+  author    = {Hong, Jiazhen and Mackellar, Geoffrey and Ghane, Soheila},
+  booktitle = {NeurReps 2026: Symmetry and Geometry in Neural Representations},
+  year      = {2026},
+  note      = {Proceedings Track, to appear in Proceedings of Machine Learning Research}
 }
 ```
