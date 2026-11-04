@@ -1,6 +1,6 @@
 # SAMBA: Toward an EEG Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding
 
-**Accepted to the NeurReps 2026 Proceedings Track at NeurIPS 2026. The paper will appear in the Proceedings of Machine Learning Research (PMLR).**
+**Accepted to the NeurReps 2026 Proceedings Track at NeurIPS 2026.**
 
 **Last updated: October 2026**
 
@@ -102,8 +102,7 @@ If you find this work useful, please cite the NeurReps 2026 proceedings paper:
 @inproceedings{hong2026samba,
   title     = {{SAMBA}: Toward an {EEG} Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding},
   author    = {Hong, Jiazhen and Mackellar, Geoffrey and Ghane, Soheila},
-  booktitle = {NeurReps 2026: Symmetry and Geometry in Neural Representations},
-  year      = {2026},
-  note      = {Proceedings Track, to appear in Proceedings of Machine Learning Research}
+  booktitle = {NeurReps 2026: Symmetry and Geometry in Neural Representations (Proceedings Track)},
+  year      = {2026}
 }
 ```
