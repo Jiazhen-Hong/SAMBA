@@ -77,7 +77,7 @@
   function drawSequence() {
     const canvas = $('#sequenceCanvas'), { ctx, w, h } = canvasContext(canvas); ctx.clearRect(0, 0, w, h);
     const rows = 6, panelH = h / 2, blocks = Math.max(16, Math.round(state.seq / 2)), masked = maskBlocks(blocks);
-    ctx.font = '8px DM Mono, monospace'; ctx.fillStyle = '#647f85'; ctx.fillText('MASKED INPUT', 7, 13); ctx.fillText('RECONSTRUCTION', 7, panelH + 13);
+    ctx.font = '8px DM Mono, monospace'; ctx.fillStyle = '#647f85'; ctx.fillText('Masked input', 7, 13); ctx.fillText('Reconstruction', 7, panelH + 13);
     ctx.strokeStyle = '#17333d'; ctx.beginPath(); ctx.moveTo(0, panelH); ctx.lineTo(w, panelH); ctx.stroke();
     for (let row = 0; row < rows; row++) {
       for (let panel = 0; panel < 2; panel++) {
@@ -132,8 +132,8 @@
     }
     ctx.strokeStyle = '#52616b88'; ctx.beginPath(); ctx.moveTo(plotLeft, baseline); ctx.lineTo(plotRight, baseline); ctx.stroke();
     ctx.font = '8px DM Mono, monospace'; ctx.fillStyle = '#8ea2ac';
-    ctx.fillText('EXAMPLE CHANNEL · AF3', plotLeft, 18);
-    ctx.fillStyle = '#ff8c7b'; ctx.fillText(`NOISE AMPLITUDE · ${Math.round(noiseLevel * 100)}%`, plotRight - 148, 18);
+    ctx.fillText('Example channel · AF3', plotLeft, 18);
+    ctx.fillStyle = '#ff8c7b'; ctx.fillText(`Noise amplitude · ${Math.round(noiseLevel * 100)}%`, plotRight - 148, 18);
 
     for (let layer = 1; layer <= 4; layer++) {
       trace('#ff7461', .8, .08 + noiseLevel * .06, (t, sample) => neural(t) + noise(sample, layer) * noiseLevel * .62);
@@ -142,7 +142,7 @@
     trace('#62d1c5', 1.8, .78, neural);
 
     displayedNoiseLevel = noiseLevel;
-    $('#headPairCount').textContent = `${state.heads} PAIRED HEADS · ${state.heads * 2} MAMBA BRANCHES`;
+    $('#headPairCount').textContent = `${state.heads} paired heads · ${state.heads * 2} Mamba branches`;
     $('#noiseResidual').textContent = `${Math.round(noiseLevel * 100)}% illustrative noise amplitude`;
   }
 
@@ -231,7 +231,7 @@
     ctx.beginPath(); ctx.moveTo(boundaryX, pad.top); ctx.lineTo(boundaryX, pad.top + plotH); ctx.stroke();
     ctx.restore();
     ctx.fillStyle = '#ffc17f'; ctx.font = '7px DM Mono, monospace'; ctx.textAlign = 'left';
-    ctx.fillText('REPORTED TO 2,000', Math.min(boundaryX + 5, w - 105), pad.top + 9);
+    ctx.fillText('Reported to 2,000', Math.min(boundaryX + 5, w - 105), pad.top + 9);
 
     const start = series.points[0], end = series.points[1];
     ctx.strokeStyle = '#55c7d4'; ctx.lineWidth = 2;
@@ -263,7 +263,7 @@
     const status = $('#estimateStatus');
     status.classList.toggle('estimated', estimated);
     status.classList.toggle('measured', !estimated);
-    status.querySelector('span').textContent = estimated ? 'ESTIMATED' : 'MEASURED RANGE';
+    status.querySelector('span').textContent = estimated ? 'Estimated' : 'Measured range';
     status.querySelector('small').textContent = estimated ? 'Past reported resource points' : 'Between reported resource points';
     drawResourceChart($('#memoryChart'), benchmark.memory, steps);
     drawResourceChart($('#inferenceChart'), benchmark.inference, steps);
@@ -282,10 +282,10 @@
   $('#reset').addEventListener('click', () => { Object.assign(state, { seq: 120, mask: 50, heads: 4, channels: 14, seed: 3, selected: 0 }); $('#seq').value = 120; $('#mask').value = 50; $('#heads').value = 4; $$('#montageButtons button').forEach((b) => b.classList.toggle('active', b.dataset.ch === '14')); updatePlay(); });
 
   const method = {
-    tsr: ['SELF-SUPERVISION','Hide EEG spans','Hide part of the signal, then rebuild it.','Learn the larger pattern.',['hidden EEG','context','rebuilt EEG']],
-    cdse: ['SHARED EEG SPACE','Unify headset layouts','3D electrode positions map any headset into one pretraining space.','Train across different layouts.',['input headset','3D map','shared space']],
-    mamba: ['DENOISING','Reduce shared noise','Paired paths subtract repeated responses.','Keep useful changes.',['path A','difference','path B']],
-    decoder: ['RECONSTRUCTION','Rebuild the signal','Restore hidden EEG at several scales.','Use short and long context.',['compress','combine','rebuild']]
+    tsr: ['Self-supervision','Hide EEG spans','Hide part of the signal, then rebuild it.','Learn the larger pattern.',['hidden EEG','context','rebuilt EEG']],
+    cdse: ['Shared EEG space','Unify headset layouts','3D electrode positions map any headset into one pretraining space.','Train across different layouts.',['input headset','3D map','shared space']],
+    mamba: ['Denoising','Reduce shared noise','Paired paths subtract repeated responses.','Keep useful changes.',['path A','difference','path B']],
+    decoder: ['Reconstruction','Rebuild the signal','Restore hidden EEG at several scales.','Use short and long context.',['compress','combine','rebuild']]
   };
   $$('.method-tabs button').forEach((button) => button.addEventListener('click', () => {
     $$('.method-tabs button').forEach((b) => b.classList.toggle('active', b === button)); const d = method[button.dataset.step];
@@ -442,11 +442,11 @@
   }
 
   const tasks = {
-    eyes:['assets/topography/eyes-state.gif','FRONTAL REGION','Eyes open / closed','Focuses on frontal signals linked to eye closure.'],
-    driver:['assets/topography/driver-distraction.gif','LEFT TEMPORAL REGION','Driver distraction','Focuses on left temporal signals during distraction.'],
-    workload:['assets/topography/workload.gif','LEFT FRONTAL REGION','Mental workload','Focuses on left frontal signals during workload.'],
-    tuab:['assets/topography/tuab.gif','OCCIPITAL REGION','Abnormal EEG','Focuses on occipital signals for abnormal EEG.'],
-    motor:['assets/topography/motor-imagery.gif','MOTOR CORTEX','Motor imagery','Focuses near sensorimotor regions during imagined movement.']
+    eyes:['assets/topography/eyes-state.gif','Frontal region','Eyes open / closed','Focuses on frontal signals linked to eye closure.'],
+    driver:['assets/topography/driver-distraction.gif','Left temporal region','Driver distraction','Focuses on left temporal signals during distraction.'],
+    workload:['assets/topography/workload.gif','Left frontal region','Mental workload','Focuses on left frontal signals during workload.'],
+    tuab:['assets/topography/tuab.gif','Occipital region','Abnormal EEG','Focuses on occipital signals for abnormal EEG.'],
+    motor:['assets/topography/motor-imagery.gif','Motor cortex','Motor imagery','Focuses near sensorimotor regions during imagined movement.']
   };
   $$('.task-list button').forEach((button)=>button.addEventListener('click',()=>{ $$('.task-list button').forEach((b)=>b.classList.toggle('active',b===button)); const d=tasks[button.dataset.task]; $('#topoImage').src=d[0]; $('#topoImage').alt=`Animated SAMBA spatial weights for ${d[2]}`; $('#topoRegion').textContent=d[1]; $('#topoTitle').textContent=d[2]; $('#topoText').textContent=d[3]; }));
 

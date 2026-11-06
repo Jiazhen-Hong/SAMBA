@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#16090c">
+  <meta name="theme-color" content="#101820">
   <meta name="description" content="Interactive explainer for SAMBA: long-sequence EEG foundation modeling with Differential Mamba and Coordinate-Driven Spatial Embedding.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://samba.dcode.ai/">
@@ -25,23 +25,25 @@
   <title>SAMBA · Interactive EEG foundation model explorer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Mona+Sans:wdth,wght@75..125,300..700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <script>(function(){ var t = null; try{ t = localStorage.getItem('dcode-theme'); }catch(e){} var light = t === 'light'; document.documentElement.dataset.theme = light ? 'light' : 'dark';
+  if(light){ var m = document.querySelector('meta[name="theme-color"]'); if(m) m.content = '#F5F5F3'; } })();</script>
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="nav shell">
     <a class="brand" href="#top"><span class="mark">S</span><span>SAMBA</span></a>
     <nav><a href="#play">Playground</a><a href="#method">Method</a><a href="#spatial">Spatial maps</a><a href="#cite">Cite</a></nav>
-    <div class="nav-actions"><a href="https://jiazhen-hong.github.io/jiazhenhong/projects/" class="pill">All projects</a><a href="https://github.com/Jiazhen-Hong/SAMBA" target="_blank" rel="noreferrer" class="pill accent">GitHub ↗</a></div>
+    <div class="nav-actions"><button type="button" class="theme-x" aria-label="Switch to light theme"><svg class="sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1"/></svg><svg class="moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 9.6A5.8 5.8 0 0 1 6.4 2.4a5.8 5.8 0 1 0 7.2 7.2z"/></svg></button><a href="https://jiazhen-hong.github.io/jiazhenhong/projects/" class="pill">All projects</a><a href="https://github.com/Jiazhen-Hong/SAMBA" target="_blank" rel="noreferrer" class="pill accent">GitHub ↗</a></div>
   </header>
 
   <main id="top">
     <section class="hero shell">
-      <div class="hero-meta mono"><a class="conference-link" href="https://neurips.cc/virtual/2026/loc/sydney/157481" target="_blank" rel="noreferrer"><span class="conference-main">NEURIPS 2026</span><span class="conference-detail">(NEURREPS · PROCEEDINGS TRACK)</span><span class="conference-arrow" aria-hidden="true">↗</span></a><span>EEG FOUNDATION MODEL</span></div>
+      <div class="hero-meta mono"><a class="conference-link" href="https://neurips.cc/virtual/2026/loc/sydney/157481" target="_blank" rel="noreferrer"><span class="conference-main">NeurIPS 2026</span><span class="conference-detail">(NeurReps · Proceedings Track)</span><span class="conference-arrow" aria-hidden="true">↗</span></a><span>EEG foundation model</span></div>
       <div class="hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow mono">LONG EEG. ANY HEADSET. ONE MODEL.</p>
+          <p class="eyebrow mono">Long EEG. Any headset. One model.</p>
           <h1>SAMBA</h1>
           <p class="subtitle">Learn from <em>long EEG</em> across <em>different headsets.</em></p>
           <p class="authors">Jiazhen Hong · Geoffrey Mackellar · Soheila Ghane</p>
@@ -52,59 +54,59 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
               </a>
               <a class="resource-icon arxiv-icon" href="https://arxiv.org/abs/2511.18571" target="_blank" rel="noreferrer" aria-label="SAMBA paper on arXiv" title="arXiv paper"><span aria-hidden="true">arXiv</span></a>
-              <a class="resource-icon hf-icon" href="https://huggingface.co/" target="_blank" rel="noreferrer" aria-label="Hugging Face weights will release soon" title="Hugging Face weights"><span aria-hidden="true">🤗</span></a>
+              <a class="resource-icon hf-icon" href="https://huggingface.co/" target="_blank" rel="noreferrer" aria-label="Hugging Face weights will release soon" title="Hugging Face weights"><span aria-hidden="true">HF</span></a>
               <span class="release-note">Will release soon</span>
             </div>
           </div>
         </div>
-        <div class="hero-visual reveal">
+        <div data-ui class="hero-visual reveal">
           <canvas id="heroCanvas" aria-label="Animated EEG waves mapping into a shared scalp space"></canvas>
-          <div class="samba-core"><i></i><i></i><i></i><span>S</span><small>LINEAR TIME</small></div>
-          <div class="hero-label label-left mono">EEG SIGNALS</div><div class="hero-label label-right mono">SHARED SPACE</div>
+          <div class="samba-core"><i></i><i></i><i></i><span>S</span><small>Linear time</small></div>
+          <div class="hero-label label-left mono">EEG signals</div><div class="hero-label label-right mono">Shared space</div>
         </div>
       </div>
       <div class="hero-stats reveal"><div><strong>O(n)</strong><span>linear with sequence length</span></div><div><strong>3D</strong><span>one space for every headset</span></div><div><strong>TSR + DM</strong><span>learn signals, reduce shared noise</span></div></div>
     </section>
 
     <section id="play" class="section shell">
-      <div class="section-head reveal"><p class="kicker mono">01 / PLAYGROUND</p><h2>Try the model.<br><em>Watch it change.</em></h2><p>Move a slider. The visual updates beside it.</p></div>
+      <div class="section-head reveal"><p class="kicker mono">01 / playground</p><h2>Try the model.<br><em>Watch it change.</em></h2><p>Move a slider. The visual updates beside it.</p></div>
       <div class="playground reveal">
         <aside class="controls">
-          <div class="controls-title"><span class="pulse"></span><span class="mono">MODEL CONTROLS</span><button id="reset" type="button">Reset</button></div>
-          <label class="sequence-control"><span><b>Sequence length</b><output id="seqValue">120 s</output></span><small>Tested to 120 s. Longer values are estimates.</small><div class="range-shell"><input id="seq" type="range" min="5" max="600" step="5" value="120"><i class="experiment-marker" aria-hidden="true"><span>120 s tested</span></i></div><div class="range-zones mono"><span>TESTED</span><span>ESTIMATED →</span></div></label>
+          <div class="controls-title"><span class="pulse"></span><span class="mono">Model controls</span><button id="reset" type="button">Reset</button></div>
+          <label class="sequence-control"><span><b>Sequence length</b><output id="seqValue">120 s</output></span><small>Tested to 120 s. Longer values are estimates.</small><div class="range-shell"><input id="seq" type="range" min="5" max="600" step="5" value="120"><i class="experiment-marker" aria-hidden="true"><span>120 s tested</span></i></div><div class="range-zones mono"><span>Tested</span><span>Estimated →</span></div></label>
           <label><span><b>TSR mask ratio</b><output id="maskValue">50%</output></span><small>Hide part of the signal to learn the rest.</small><input id="mask" type="range" min="10" max="80" step="5" value="50"></label>
           <label><span><b>Differential heads</b><output id="headValue">4</output></span><small>Paired paths reduce shared noise.</small><input id="heads" type="range" min="2" max="8" step="2" value="4"></label>
           <button id="resample" type="button" class="button primary full">↻ Resample TSR mask</button>
-          <p class="disclaimer mono">ILLUSTRATIVE DEMO · NO TRAINED WEIGHTS</p>
+          <p class="disclaimer mono">Illustrative demo · no trained weights</p>
         </aside>
         <div class="stage">
-          <div class="stage-head"><div><span class="mono">LIVE VIEW</span><strong>Long EEG</strong></div><div><span class="mono">VISIBLE</span><strong id="visibleValue">50%</strong></div><div><span class="mono">SHARED SPACE</span><strong>64 ch</strong></div></div>
+          <div data-ui class="stage-head"><div><span class="mono">Live view</span><strong>Long EEG</strong></div><div><span class="mono">Visible</span><strong id="visibleValue">50%</strong></div><div><span class="mono">Shared space</span><strong>64 ch</strong></div></div>
           <div class="complexity aligned-growth">
-            <div class="complexity-copy"><span class="mono">SEQUENCE LENGTH</span><h3 id="tokenCount">15,360 time steps</h3><p>Compared with the tested 120 s setting.</p></div>
-            <div class="growth-bars">
+            <div class="complexity-copy"><span class="mono">Sequence length</span><h3 id="tokenCount">15,360 time steps</h3><p>Compared with the tested 120 s setting.</p></div>
+            <div data-ui class="growth-bars">
               <div><span>Transformer <b>O(n²)</b></span><div class="track"><i id="transformerBar"></i></div><output id="transformerGrowth">×1.0</output></div>
               <div class="mamba"><span>SAMBA <b>O(n)</b></span><div class="track"><i id="mambaBar"></i></div><output id="mambaGrowth">×1.0</output></div>
-              <small class="mono">SHARED LOG SCALE</small>
+              <small class="mono">Shared log scale</small>
             </div>
           </div>
-          <div class="sequence"><canvas id="sequenceCanvas" aria-label="Illustrative TSR masking and EEG reconstruction"></canvas><div class="sequence-legend mono"><span><i class="raw"></i>RAW EEG</span><span><i class="masked"></i>MASKED</span><span><i class="recon"></i>RECONSTRUCTED</span></div></div>
+          <div data-ui class="sequence"><canvas id="sequenceCanvas" aria-label="Illustrative TSR masking and EEG reconstruction"></canvas><div class="sequence-legend mono"><span><i class="raw"></i>Raw EEG</span><span><i class="masked"></i>Masked</span><span><i class="recon"></i>Reconstructed</span></div></div>
           <div id="denoise" class="diff-lab">
             <div class="diff-head">
-              <div><span class="mono">DIFFERENTIAL MAMBA</span><h3>Remove noise. Keep the EEG.</h3></div>
-              <div class="diff-readout"><span id="headPairCount" class="mono">4 PAIRED HEADS · 8 MAMBA BRANCHES</span><strong id="noiseResidual">70% illustrative noise amplitude</strong></div>
+              <div><span class="mono">Differential Mamba</span><h3>Remove noise. Keep the EEG.</h3></div>
+              <div data-ui class="diff-readout"><span id="headPairCount" class="mono">4 paired heads · 8 Mamba branches</span><strong id="noiseResidual">70% illustrative noise amplitude</strong></div>
             </div>
-            <div class="diff-grid">
-              <div class="diff-signal"><canvas id="diffCanvas" aria-label="One example EEG channel with noise amplitude controlled by Differential heads"></canvas><div class="diff-legend mono"><span><i class="branch-one"></i>CURRENT OUTPUT</span><span><i class="diff-output"></i>UNDERLYING EEG</span></div></div>
+            <div data-ui class="diff-grid">
+              <div class="diff-signal"><canvas id="diffCanvas" aria-label="One example EEG channel with noise amplitude controlled by Differential heads"></canvas><div class="diff-legend mono"><span><i class="branch-one"></i>Current output</span><span><i class="diff-output"></i>Underlying EEG</span></div></div>
               <div id="diffHeads" class="diff-heads" aria-label="Active Differential Mamba head pairs"></div>
             </div>
-            <p class="diff-note">Illustration only. Move “Differential heads” to change noise amplitude; the underlying EEG stays fixed.</p>
+            <p data-ui class="diff-note">Illustration only. Move “Differential heads” to change noise amplitude; the underlying EEG stays fixed.</p>
           </div>
           <div class="resource-model">
             <div class="resource-head">
-              <div><span class="mono">RESOURCE TREND</span><h3>Measured → estimated</h3></div>
-              <div id="estimateStatus" class="estimate-status estimated"><i></i><span>ESTIMATED</span><small>Past reported resource points</small></div>
+              <div><span class="mono">Resource trend</span><h3>Measured → estimated</h3></div>
+              <div data-ui id="estimateStatus" class="estimate-status estimated"><i></i><span>Estimated</span><small>Past reported resource points</small></div>
             </div>
-            <div class="resource-grid">
+            <div data-ui class="resource-grid">
               <article class="metric-card">
                 <div class="metric-title"><span>GPU memory</span><strong id="memoryEstimate">2,695 MB</strong></div>
                 <canvas id="memoryChart" aria-label="SAMBA GPU memory trend with measured and estimated regions"></canvas>
@@ -116,12 +118,12 @@
                 <p>Measured: <b>0.28 ms</b> at 200; <b>0.38 ms</b> at 2,000 steps.</p>
               </article>
             </div>
-            <div class="benchmark-legend mono">
-              <span><i class="measured-line"></i>SOLID: REPORTED</span>
-              <span><i class="estimated-line"></i>DASHED: ESTIMATED</span>
-              <span><i class="boundary-line"></i>LAST REPORTED POINT</span>
+            <div data-ui class="benchmark-legend mono">
+              <span><i class="measured-line"></i>Solid: reported</span>
+              <span><i class="estimated-line"></i>Dashed: estimated</span>
+              <span><i class="boundary-line"></i>Last reported point</span>
             </div>
-            <p class="benchmark-note">Solid lines use reported measurements. Dashed lines extend the trend; they are not new benchmarks. <a href="https://arxiv.org/abs/2511.18571" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            <p data-ui class="benchmark-note">Solid lines use reported measurements. Dashed lines extend the trend; they are not new benchmarks. <a href="https://arxiv.org/abs/2511.18571" target="_blank" rel="noreferrer">Paper ↗</a></p>
           </div>
         </div>
       </div>
@@ -129,58 +131,75 @@
 
     <section id="method" class="method-section section">
       <div class="shell">
-        <div class="section-head split reveal"><div><p class="kicker mono">02 / THE MODEL</p><h2>Four steps.<br><em>One model.</em></h2></div><p>Tap a step.</p></div>
+        <div class="section-head split reveal"><div><p class="kicker mono">02 / the model</p><h2>Four steps.<br><em>One model.</em></h2></div><p>Tap a step.</p></div>
         <div class="method reveal">
-          <div class="method-tabs" role="tablist"><button class="active" data-step="tsr"><span>01</span>TSR masking</button><button data-step="cdse"><span>02</span>CDSE</button><button data-step="mamba"><span>03</span>Differential Mamba</button><button data-step="decoder"><span>04</span>U-shaped decoder</button></div>
+          <div data-ui class="method-tabs" role="tablist"><button class="active" data-step="tsr"><span>01</span>TSR masking</button><button data-step="cdse"><span>02</span>CDSE</button><button data-step="mamba"><span>03</span>Differential Mamba</button><button data-step="decoder"><span>04</span>U-shaped decoder</button></div>
           <div class="method-content">
-            <div class="method-copy"><p id="methodKicker" class="mono">SELF-SUPERVISION</p><h3 id="methodTitle">Hide EEG spans</h3><p id="methodText">Hide part of the signal, then rebuild it.</p><div class="method-note"><span>WHY</span><p id="methodNote">Learn the larger pattern.</p></div></div>
-            <div class="method-visual" id="methodVisual" data-step="tsr">
-              <div class="generic-method-visual"><div class="tower left"><i></i><i></i><i></i><i></i></div><div class="bridge"><span>Δ</span><b>MAMBA</b></div><div class="tower right"><i></i><i></i><i></i><i></i></div><div class="flow"></div><span class="tag tag1">hidden EEG</span><span class="tag tag2">context</span><span class="tag tag3">rebuilt EEG</span></div>
+            <div class="method-copy"><p id="methodKicker" class="mono">Self-supervision</p><h3 id="methodTitle">Hide EEG spans</h3><p id="methodText">Hide part of the signal, then rebuild it.</p><div class="method-note"><span>Why</span><p id="methodNote">Learn the larger pattern.</p></div></div>
+            <div data-ui class="method-visual" id="methodVisual" data-step="tsr">
+              <div class="generic-method-visual"><div class="tower left"><i></i><i></i><i></i><i></i></div><div class="bridge"><span>Δ</span><b>Mamba</b></div><div class="tower right"><i></i><i></i><i></i><i></i></div><div class="flow"></div><span class="tag tag1">hidden EEG</span><span class="tag tag2">context</span><span class="tag tag3">rebuilt EEG</span></div>
               <div class="cdse-method-visual" aria-label="CDSE coordinate-driven spatial mapping">
                 <div class="mini-topomap"><span class="mono" id="methodInputLabel">EPOC X · 14 ch</span><svg id="methodInputTopo" viewBox="0 0 300 300" role="img" aria-label="CDSE input montage"></svg></div>
-                <div class="cdse-operator"><span class="mono">PAIRWISE 3D DIFFERENCE</span><strong>Δ(x, y, z)</strong><b>MLP → softmax over input channels</b><i></i><small class="mono">X<sub>target</sub> = W X<sub>input</sub></small></div>
+                <div class="cdse-operator"><span class="mono">Pairwise 3D difference</span><strong>Δ(x, y, z)</strong><b>MLP → softmax over input channels</b><i></i><small class="mono">X<sub>target</sub> = W X<sub>input</sub></small></div>
                 <div class="mini-topomap target"><span class="mono" id="methodTargetLabel">PhysioNet · 64 ch</span><svg id="methodTargetTopo" viewBox="0 0 300 300" role="img" aria-label="CDSE target montage"></svg></div>
               </div>
             </div>
           </div>
         </div>
-        <a class="source-strip reveal" href="https://github.com/Jiazhen-Hong/SAMBA/blob/main/Models/SAMBA.py" target="_blank" rel="noreferrer"><span class="mono">FULL MODEL</span><strong>Open model code</strong><i>↗</i></a>
+        <a class="source-strip reveal" href="https://github.com/Jiazhen-Hong/SAMBA/blob/main/Models/SAMBA.py" target="_blank" rel="noreferrer"><span class="mono">Full model</span><strong>Open model code</strong><i>↗</i></a>
       </div>
     </section>
 
     <section id="spatial" class="section shell">
-      <div class="section-head split reveal"><div><p class="kicker mono">03 / SPATIAL MAPPING</p><h2>Any headset.<br><em>One pretraining space.</em></h2></div><p>3D coordinates map each headset into the same space.</p></div>
-      <div class="spatial-controls reveal" aria-label="Input montage controls">
-        <div class="spatial-controls-copy"><span class="mono">INPUT HEADSET</span><output id="montageValue">EPOC X · 14 ch</output><small>Choose a layout.</small></div>
+      <div class="section-head split reveal"><div><p class="kicker mono">03 / spatial mapping</p><h2>Any headset.<br><em>One pretraining space.</em></h2></div><p>3D coordinates map each headset into the same space.</p></div>
+      <div data-ui class="spatial-controls reveal" aria-label="Input montage controls">
+        <div class="spatial-controls-copy"><span class="mono">Input headset</span><output id="montageValue">EPOC X · 14 ch</output><small>Choose a layout.</small></div>
         <div id="montageButtons" class="segments montage-segments"><button data-ch="2"><b>2</b><small>MN8</small></button><button data-ch="14" class="active"><b>14</b><small>EPOC X</small></button><button data-ch="32"><b>32</b><small>10–20</small></button><button data-ch="64"><b>64</b><small>PhysioNet</small></button><button data-ch="128"><b>128</b><small>Grosse</small></button><button data-ch="256"><b>256</b><small>10–5</small></button></div>
       </div>
-      <div class="spatial-lab reveal">
-        <div class="head-map"><div class="map-title"><span class="mono">INPUT SPACE</span><strong id="inputMapTitle">14 channels</strong></div><svg id="inputScalp" viewBox="0 0 300 300" role="img" aria-label="Input EEG montage"></svg></div>
-        <div class="projection"><div class="projection-lines" id="projectionLines"></div><div class="weight-card" aria-label="Simulated CDSE mapping"><span class="mono simulation-label">SIMULATED MAPPING</span><strong id="selectedChannel">AF3</strong><p id="weightSummary">Peak: Fp1 · 36.1%</p><small>Coordinate-distance proxy</small></div><p class="mono">ILLUSTRATIVE W COLUMN</p></div>
-        <div class="head-map target-map"><div class="map-title"><span class="mono">SHARED PRETRAINING SPACE</span><strong>64-channel target</strong></div><svg id="targetScalp" viewBox="0 0 300 300" role="img" aria-label="Simulated whole-scalp CDSE mapping response"></svg><div class="weight-legend mono"><span>LOW</span><i></i><span>HIGH CONTRIBUTION</span></div></div>
+      <div data-ui class="spatial-lab reveal">
+        <div class="head-map"><div class="map-title"><span class="mono">Input space</span><strong id="inputMapTitle">14 channels</strong></div><svg id="inputScalp" viewBox="0 0 300 300" role="img" aria-label="Input EEG montage"></svg></div>
+        <div class="projection"><div class="projection-lines" id="projectionLines"></div><div class="weight-card" aria-label="Simulated CDSE mapping"><span class="mono simulation-label">Simulated mapping</span><strong id="selectedChannel">AF3</strong><p id="weightSummary">Peak: Fp1 · 36.1%</p><small>Coordinate-distance proxy</small></div><p class="mono">Illustrative W column</p></div>
+        <div class="head-map target-map"><div class="map-title"><span class="mono">Shared pretraining space</span><strong>64-channel target</strong></div><svg id="targetScalp" viewBox="0 0 300 300" role="img" aria-label="Simulated whole-scalp CDSE mapping response"></svg><div class="weight-legend mono"><span>Low</span><i></i><span>High contribution</span></div></div>
         <svg id="mappingOverlay" class="mapping-overlay" aria-hidden="true"></svg>
       </div>
-      <p class="spatial-note mono reveal">SIMULATION ONLY · NO CHECKPOINT WEIGHTS · REPOSITORY COORDINATES; MN8 IS SCHEMATIC.</p>
-      <a class="source-strip reveal" href="https://github.com/Jiazhen-Hong/SAMBA/tree/main/Montage" target="_blank" rel="noreferrer"><span class="mono">REAL COORDINATES</span><strong>Open montage files</strong><i>↗</i></a>
+      <p class="spatial-note mono reveal">Simulation only · no checkpoint weights · repository coordinates; MN8 is schematic.</p>
+      <a class="source-strip reveal" href="https://github.com/Jiazhen-Hong/SAMBA/tree/main/Montage" target="_blank" rel="noreferrer"><span class="mono">Real coordinates</span><strong>Open montage files</strong><i>↗</i></a>
     </section>
 
     <section class="maps-section section">
       <div class="shell">
-        <div class="section-head split reveal"><div><p class="kicker mono">04 / RESULTS</p><h2>What SAMBA<br><em>learns.</em></h2></div><p>Pick a task to see where it focuses.</p></div>
+        <div class="section-head split reveal"><div><p class="kicker mono">04 / results</p><h2>What SAMBA<br><em>learns.</em></h2></div><p>Pick a task to see where it focuses.</p></div>
         <div class="map-gallery reveal">
-          <div class="task-list" role="tablist"><button class="active" data-task="eyes">Eyes open / closed</button><button data-task="driver">Driver distraction</button><button data-task="workload">Mental workload</button><button data-task="tuab">Abnormal EEG</button><button data-task="motor">Motor imagery</button></div>
-          <div class="topo-view"><img id="topoImage" src="assets/topography/eyes-state.gif" alt="Animated spatial weights for eyes open and closed"><div><span id="topoRegion" class="mono">FRONTAL REGION</span><h3 id="topoTitle">Eyes open / closed</h3><p id="topoText">Focuses on frontal signals linked to eye closure.</p></div></div>
+          <div data-ui class="task-list" role="tablist"><button class="active" data-task="eyes">Eyes open / closed</button><button data-task="driver">Driver distraction</button><button data-task="workload">Mental workload</button><button data-task="tuab">Abnormal EEG</button><button data-task="motor">Motor imagery</button></div>
+          <div class="topo-view"><img id="topoImage" src="assets/topography/eyes-state.gif" alt="Animated spatial weights for eyes open and closed"><div><span id="topoRegion" class="mono">Frontal region</span><h3 id="topoTitle">Eyes open / closed</h3><p id="topoText">Focuses on frontal signals linked to eye closure.</p></div></div>
         </div>
       </div>
     </section>
 
-    <section class="use-section section shell"><div class="use-copy reveal"><p class="kicker mono">EXPLORE</p><h2>Go deeper.</h2><div class="links"><a href="https://github.com/Jiazhen-Hong/SAMBA" target="_blank" rel="noreferrer"><span>01</span><b>Code</b><i>GitHub ↗</i></a><a href="https://arxiv.org/abs/2511.18571" target="_blank" rel="noreferrer"><span>02</span><b>Paper</b><i>arXiv ↗</i></a><a href="https://github.com/Jiazhen-Hong/SAMBA/tree/main/Montage" target="_blank" rel="noreferrer"><span>03</span><b>Electrode layouts</b><i>Data ↗</i></a></div></div></section>
+    <section class="use-section section shell"><div class="use-copy reveal"><p class="kicker mono">Explore</p><h2>Go deeper.</h2><div class="links"><a href="https://github.com/Jiazhen-Hong/SAMBA" target="_blank" rel="noreferrer"><span>01</span><b>Code</b><i>GitHub ↗</i></a><a href="https://arxiv.org/abs/2511.18571" target="_blank" rel="noreferrer"><span>02</span><b>Paper</b><i>arXiv ↗</i></a><a href="https://github.com/Jiazhen-Hong/SAMBA/tree/main/Montage" target="_blank" rel="noreferrer"><span>03</span><b>Electrode layouts</b><i>Data ↗</i></a></div></div></section>
 
-    <section id="cite" class="citation shell reveal"><div class="citation-label"><span class="mono">CITE SAMBA</span><small class="mono">BIBTEX + PLAIN TEXT</small></div><p>Hong, J., Mackellar, G., &amp; Ghane, S. (2026). <em>SAMBA: Toward an EEG Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding.</em> NeurReps 2026 Proceedings Track.</p><button id="copyCitation" type="button">Copy BibTeX</button></section>
+    <section id="cite" class="citation shell reveal"><div class="citation-label"><span class="mono">Cite SAMBA</span><small class="mono">BibTeX and plain text</small></div><p>Hong, J., Mackellar, G., &amp; Ghane, S. (2026). <em>SAMBA: Toward an EEG Foundation Model via Differential Mamba and Coordinate-Driven Spatial Embedding.</em> NeurReps 2026 Proceedings Track.</p><button id="copyCitation" type="button">Copy BibTeX</button></section>
   </main>
   <footer class="footer shell"><a class="brand" href="#top"><span class="mark">S</span><span>SAMBA</span></a><p>Accepted to the NeurReps 2026 Proceedings Track at NeurIPS 2026.</p><div><a href="https://jiazhen-hong.github.io/jiazhenhong/projects/">Projects</a><a href="https://github.com/Jiazhen-Hong/SAMBA" target="_blank" rel="noreferrer">Code</a><a href="#top">Back to top ↑</a></div></footer>
   <script src="montages.js?v=3" defer></script>
   <script src="montage32.js?v=1" defer></script>
-  <script src="app.js?v=14" defer></script>
+  <script src="app.js?v=15" defer></script>
+<script>
+// the theme switch, as on v13: flips between dark and light, remembers the choice (shared with the Dcode pages), cross-fades where it can
+(function(){
+  const root = document.documentElement, meta = document.querySelector('meta[name="theme-color"]'), btns = document.querySelectorAll('.theme-x');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sync = ()=> { const light = root.dataset.theme === 'light'; if(meta) meta.content = light ? '#F5F5F3' : '#101820';
+    btns.forEach(b => b.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme')); };
+  btns.forEach(b => b.addEventListener('click', ()=> { const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    const go = ()=> { root.dataset.theme = next; try{ localStorage.setItem('dcode-theme', next); }catch(_){} sync(); };
+    if(document.startViewTransition && !reduce) document.startViewTransition(go); else go(); }));
+  sync();
+})();
+// the nav, as on v13: clear at the very top, its panel and hairline once the page scrolls
+(function(){ const n = document.querySelector('header.nav'); if(!n) return;
+  const f = ()=> { n.classList.toggle('scrolled', scrollY > 8); n.classList.toggle('top', scrollY <= 8); };
+  addEventListener('scroll', f, {passive:true}); f(); })();
+</script>
 </body>
 </html>
