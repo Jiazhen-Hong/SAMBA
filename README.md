@@ -2,7 +2,9 @@
 
 **Accepted to the NeurReps 2026 Proceedings Track at NeurIPS 2026.**
 
-**Last updated: October 2026**
+**Last updated: November 2026**
+
+> **Update:** The legacy SAMBA code remains available as an architecture reference. After my internship ended last year, the original SAMBA-E and SAMBA-T checkpoints were no longer available. We are rebuilding the training pipeline and preparing updated checkpoints jointly trained on EMOTIV public datasets and TUAB. New resources will be released soon.
 
 **SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
