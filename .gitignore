@@ -5,5 +5,16 @@ Other_Models/
 Script/
 Experiments/
 
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+*.safetensors
+*.pt
+*.pth
+checkpoints/*/
+!checkpoints/
+!checkpoints/README.md
+
 
 
