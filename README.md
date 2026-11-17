@@ -4,7 +4,7 @@
 
 **Last updated: November 2026**
 
-> **Update:** The legacy SAMBA code remains available as an architecture reference. After my internship ended last year, the original SAMBA-E and SAMBA-T checkpoints were no longer available. We are rebuilding the training pipeline and preparing updated checkpoints jointly trained on EMOTIV public datasets and TUAB. New resources will be released soon.
+> **Update:** [SAMBA-2s and SAMBA-100s checkpoints](https://huggingface.co/Jay1208/SAMBA) are now available on Hugging Face.
 
 **SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
@@ -86,12 +86,12 @@ The figure below illustrates the **Coordinate-Driven Spatial Embedding (CDSE)** 
 
 ## Pretrained models
 
-Two retrained checkpoints are available for local evaluation:
+Two retrained checkpoints are available on [Hugging Face](https://huggingface.co/Jay1208/SAMBA):
 
 | Checkpoint | Pretraining data | Window |
 |---|---|---|
-| SAMBA-2s | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
-| SAMBA-100s | TUAB | 100 s at 128 Hz |
+| [SAMBA-2s](https://huggingface.co/Jay1208/SAMBA/tree/main/SAMBA-2s) | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
+| [SAMBA-100s](https://huggingface.co/Jay1208/SAMBA/tree/main/SAMBA-100s) | TUAB | 100 s at 128 Hz |
 
 This work was developed during my 2025 internship at Emotiv. The original
 checkpoints are no longer available, so we retrained both models.
@@ -100,7 +100,6 @@ and DICE to the Emotiv data to increase spatial diversity across electrode
 layouts. The suffix indicates the pretraining window; both encoders accept
 other input lengths and channel layouts. See
 [checkpoint details](checkpoints/README.md) for preprocessing and evaluation.
-Hugging Face download links will be added when the weights are uploaded.
 
 Install in a CUDA environment with PyTorch and Mamba-2:
 
@@ -108,7 +107,20 @@ Install in a CUDA environment with PyTorch and Mamba-2:
 pip install -e '.[mamba,hub]'
 ```
 
-Load a checkpoint directory containing `config.json` and `model.safetensors`:
+Download either checkpoint:
+
+```python
+from huggingface_hub import snapshot_download
+
+variant = "SAMBA-100s"  # or "SAMBA-2s"
+snapshot_download(
+    "Jay1208/SAMBA",
+    allow_patterns=[f"{variant}/*"],
+    local_dir="checkpoints",
+)
+```
+
+Load the downloaded checkpoint:
 
 ```python
 import torch

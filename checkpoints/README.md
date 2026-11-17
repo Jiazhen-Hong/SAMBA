@@ -1,5 +1,7 @@
 # Checkpoints
 
+Download from [Hugging Face](https://huggingface.co/Jay1208/SAMBA).
+
 SAMBA-2s and SAMBA-100s were retrained after the original internship checkpoints
 were lost and the data pipeline was reorganized. They are evaluated separately
 from the paper's SAMBA-E and SAMBA-T.
@@ -17,8 +19,7 @@ as the checkpoint's target positions. The window suffix does not limit encoder
 input length. The SAMBA-100s reconstruction decoder retains its 16-channel
 output even when the encoder receives a different montage.
 
-Each model directory contains `config.json`, `model.safetensors`,
-`training_metadata.json`, `README.md`, and `SHA256SUMS`. Use the validation-best
+Each model directory contains `config.json` and `model.safetensors`. Use the validation-best
 weights for evaluation; optimizer state and TensorBoard logs stay in the
 training repository. Load with `samba_eeg.SambaModel.from_pretrained` after
 downloading the model directory. Transformers `AutoModel` is not supported.
