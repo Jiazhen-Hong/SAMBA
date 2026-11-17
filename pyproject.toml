@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "samba-eeg"
+version = "0.2.0"
+description = "SAMBA EEG representation learning"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy>=1.24", "safetensors>=0.4"]
+
+[project.optional-dependencies]
+mamba = ["mamba-ssm>=2.2"]
+hub = ["huggingface-hub>=0.24"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

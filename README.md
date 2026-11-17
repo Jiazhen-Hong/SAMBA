@@ -84,9 +84,57 @@ The figure below illustrates the **Coordinate-Driven Spatial Embedding (CDSE)** 
 </sub>
 <!-- </div> -->
 
+## Pretrained models
+
+Two retrained checkpoints are available for local evaluation:
+
+| Checkpoint | Pretraining data | Window |
+|---|---|---|
+| SAMBA-2s | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
+| SAMBA-100s | TUAB | 100 s at 128 Hz |
+
+These replace the unavailable historical weights; they are not the checkpoints
+used in the paper tables. The suffix specifies the pretraining window. Both
+encoders accept other input lengths and channel layouts. See
+[checkpoint details](checkpoints/README.md) for preprocessing and evaluation.
+Hugging Face download links will be added when the weights are uploaded.
+
+Install in a CUDA environment with PyTorch and Mamba-2:
+
+```bash
+pip install -e '.[mamba,hub]'
+```
+
+Load a checkpoint directory containing `config.json` and `model.safetensors`:
+
+```python
+import torch
+from samba_eeg import SambaModel
+
+model = SambaModel.from_pretrained("checkpoints/SAMBA-100s").cuda().eval()
+# signals: [B, C, T]; positions: [C, 3], in input-channel order.
+# Use real electrode coordinates in the same coordinate system as the montage.
+with torch.inference_mode():
+    features = model.encode(signals.cuda(), positions.cuda())  # [B, T//8, 128]
+```
+
+With NeuralBench installed, evaluate the frozen encoder with a mean-pooled
+linear probe:
+
+```bash
+python scripts/evaluate_neuralbench.py checkpoints/SAMBA-100s \
+  --task pathology --name samba-100s --no-download --no-prepare
+```
+
+The last two flags reuse existing data and prepared caches. Omit them when
+NeuralBench needs to download or prepare a supported dataset.
+
 ## Repository Structure
 ```plaintext
 SAMBA/
+├── src/samba_eeg/        # Loader and model for the retrained checkpoints
+├── scripts/             # NeuralBench evaluation
+├── checkpoints/         # Checkpoint notes; weights stored separately
 ├── Env-requirement/     # Environment configs with dated backups
 ├── Models/              # Model architecture implementations
 ├── utility/             # Supporting functions: data loading, masking, loss, evaluation
