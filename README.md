@@ -93,9 +93,12 @@ Two retrained checkpoints are available for local evaluation:
 | SAMBA-2s | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
 | SAMBA-100s | TUAB | 100 s at 128 Hz |
 
-These replace the unavailable historical weights; they are not the checkpoints
-used in the paper tables. The suffix specifies the pretraining window. Both
-encoders accept other input lengths and channel layouts. See
+This work was developed during my 2025 internship at Emotiv. The original
+checkpoints are no longer available, so we retrained both models.
+SAMBA-100s reproduces the original training method. SAMBA-2s adds HBN, Muse,
+and DICE to the Emotiv data to increase spatial diversity across electrode
+layouts. The suffix indicates the pretraining window; both encoders accept
+other input lengths and channel layouts. See
 [checkpoint details](checkpoints/README.md) for preprocessing and evaluation.
 Hugging Face download links will be added when the weights are uploaded.
 
