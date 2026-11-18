@@ -4,7 +4,7 @@
 
 **Last updated: November 2026**
 
-> **Update:** [SAMBA-2s and SAMBA-100s checkpoints](https://huggingface.co/Jay1208/SAMBA) are now available on Hugging Face.
+> **Update:** [SAMBA-2s](https://huggingface.co/Dcode-AI/SAMBA-2s) and [SAMBA-100s](https://huggingface.co/Dcode-AI/SAMBA-100s) checkpoints are now available on Hugging Face.
 
 **SAMBA** is a scalable self-supervised framework for long-sequence EEG foundation modeling. It integrates 3D coordinate-driven spatial embedding and differential Mamba modules to enable robust, efficient, and generalizable EEG representation learning across diverse recording configurations and cognitive tasks.
 
@@ -86,12 +86,12 @@ The figure below illustrates the **Coordinate-Driven Spatial Embedding (CDSE)** 
 
 ## Pretrained models
 
-Two retrained checkpoints are available on [Hugging Face](https://huggingface.co/Jay1208/SAMBA):
+Two retrained checkpoints are available on Hugging Face:
 
 | Checkpoint | Pretraining data | Window |
 |---|---|---|
-| [SAMBA-2s](https://huggingface.co/Jay1208/SAMBA/tree/main/SAMBA-2s) | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
-| [SAMBA-100s](https://huggingface.co/Jay1208/SAMBA/tree/main/SAMBA-100s) | TUAB | 100 s at 128 Hz |
+| [SAMBA-2s](https://huggingface.co/Dcode-AI/SAMBA-2s) | Emotiv, HBN, Muse, DICE | 2 s at 128 Hz |
+| [SAMBA-100s](https://huggingface.co/Dcode-AI/SAMBA-100s) | TUAB | 100 s at 128 Hz |
 
 This work was developed during my 2025 internship at Emotiv. The original
 checkpoints are no longer available, so we retrained both models.
@@ -114,9 +114,8 @@ from huggingface_hub import snapshot_download
 
 variant = "SAMBA-100s"  # or "SAMBA-2s"
 snapshot_download(
-    "Jay1208/SAMBA",
-    allow_patterns=[f"{variant}/*"],
-    local_dir="checkpoints",
+    repo_id=f"Dcode-AI/{variant}",
+    local_dir=f"checkpoints/{variant}",
 )
 ```
 

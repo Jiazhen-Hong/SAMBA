@@ -1,6 +1,6 @@
 # Checkpoints
 
-Download from [Hugging Face](https://huggingface.co/Jay1208/SAMBA).
+Download from Hugging Face: [SAMBA-2s](https://huggingface.co/Dcode-AI/SAMBA-2s) · [SAMBA-100s](https://huggingface.co/Dcode-AI/SAMBA-100s).
 
 SAMBA-2s and SAMBA-100s were retrained after the original internship checkpoints
 were lost and the data pipeline was reorganized. They are evaluated separately
